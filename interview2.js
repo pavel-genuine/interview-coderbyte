@@ -15,8 +15,6 @@ async function getUser() {
                 info = data
             })
 
-        console.log('before modification 2 :', info)
-
         for (const pro in info) {
 
             if (info[pro] == "" || info[pro] == '-' || info[pro] == 'N/A') {
