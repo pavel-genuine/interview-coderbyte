@@ -1,21 +1,19 @@
-
-import fetch from 'node-fetch';
-
-
+import fetch from 'node-fetch'
 const url = `https://coderbyte.com/api/challenges/json/json-cleaning`
 
 let info;
 
-async function getUser() {
-    try {
-        await fetch(url)
+ async function getUser() 
+ {
+    try
+ {await fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log('before modification:', data)
                 info = data
-            })
+            })  
 
-        for (const pro in info) {
+        for (const pro in info)
+         {
 
             if (info[pro] == "" || info[pro] == '-' || info[pro] == 'N/A') {
 
@@ -46,18 +44,13 @@ async function getUser() {
                 }
 
             }
-
         }
-
-
-        console.log('after modification:', info);
-
-        console.log('stringified:', JSON.stringify(info))
-    }
-    catch (err) {
-        console.log(err);
-    }
-
+      
+     
+ }
+ catch (err) {
+    console.log(err);
 }
-
+ }
+ 
 getUser()
